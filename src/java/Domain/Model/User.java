@@ -9,7 +9,7 @@ package Domain.Model;
  * @author pc
  */
 public class User {
-    private String code;
+    private String id;
     private String password;
     private String name;
     private String last_name;
@@ -22,8 +22,8 @@ public class User {
     public User() {
     }
 
-    public User(String code, String password, String name, String last_name, String role, String email, String phone, String status, String created_at) {
-        this.code = code;
+    public User(String id, String password, String name, String last_name, String role, String email, String phone, String status, String created_at) {
+        this.id = id;
         this.password = password;
         this.name = name;
         this.last_name = last_name;
@@ -34,12 +34,12 @@ public class User {
         this.created_at = created_at;
     }
 
-    public String getCode() {
-        return code;
+    public String getId() {
+        return id;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(String code) {
+        this.id = id;
     }
 
     public String getPassword() {
