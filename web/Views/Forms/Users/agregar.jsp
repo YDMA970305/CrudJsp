@@ -1,7 +1,7 @@
 <%-- 
     Document   : agregar
-    Created on : 21/11/2024, 1:32:40 a. m.
-    Author     : pc
+    Created on : 17/11/2024, 7:44:54 p. m.
+    Author     : Yesid Martinez 
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,9 +9,50 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Agregar Usuario</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Agregar Usuario</h1>
+
+        <%-- Mensaje de error o de éxito --%>
+        <% if (request.getAttribute("errorMessage") != null) { %>
+            <p style="color:red"><%= request.getAttribute("errorMessage") %></p>
+        <% } %>
+        <%if (request.getAttribute("successMessage") != null) { %>
+            <p style="color:green"><%= request.getAttribute("successMessage") %></p>
+        <% } %>
+
+        <%-- Formulario de creación de usuario --%>
+        <form action="<%= request.getContextPath() %>/Controllers/UserController.jsp?action=create" method="post">
+           <label for="id">Id:</label>
+           imput type="text" name="id" id="id" required>
+           <br><br>
+
+            <label for="name">Nombre:</label><br>
+            <input type="text" name="name" id="name" required>
+            <br><br>
+            <label for="last_name">Apellido:</label><br>
+            <input type="text" name="last_name" id="last_name" required>
+            <br><br>
+            <label for="email">Email:</label><br>
+            <input type="text" name="email" id="email" required>
+            <br><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" name="password" id="password" required>
+            <br><br>
+            <label for="role">Rol:</label><br>
+            <input type="text" name="role" id="role" required>
+            <br><br>
+            <label for="phone">Teléfono:</label><br>
+            <input type="text" name="phone" id="phone" required>
+            <br><br>
+            <label for="status">Estado:</label><br>
+            <input type="text" name="status" id="status" required>
+            <br><br>
+            <input type="submit" value="Agregar Usuario">
+        </form>
+
+        <br>
+        <a href="<%= request.getContextPath() %>/index.jsp">Menú Principal</a>
     </body>
 </html>
